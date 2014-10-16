@@ -1,0 +1,63 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven() {
+            name 'RoboBinding AspectJPlugin Maven Repository'
+            url "https://github.com/RoboBinding/RoboBinding-aspectj-plugin/raw/master/mavenRepo"
+        }
+    }
+    dependencies {
+        //classpath 'com.android.tools.build:gradle:0.12.2'
+        classpath 'org.robobinding:aspectj-plugin:0.8.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'org.robobinding.android-aspectj'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.kuisma.kari.smartdolly"
+        minSdkVersion 19
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven() {
+        name 'SonaType snapshot repository'
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+    }
+}
+
+ext {
+    robobindingVersion = 'latest.integration'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-v13:20.0.0'
+
+    //compile "org.robobinding:robobinding:$robobindingVersion"
+    //aspectPath "org.robobinding:robobinding:$robobindingVersion"
+
+    //alternatively we can use with-aop-and-dependencies jar(RoboBinding provides a minimal Proguarded with-aop-and-dependencies jar.).
+    compile ("org.robobinding:robobinding:$robobindingVersion:with-aop-and-dependencies") {
+        exclude group: 'com.google.guava', module: 'guava'
+    }
+    aspectPath ("org.robobinding:robobinding:$robobindingVersion:with-aop-and-dependencies") {
+        exclude group: 'com.google.guava', module: 'guava'
+    }
+}

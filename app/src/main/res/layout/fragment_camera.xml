@@ -1,0 +1,86 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://robobinding.org/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff2c3339"
+    tools:context=".MainActivity"
+    tools:ignore="MissingPrefix">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/exposure_time_title" />
+
+        <EditText
+            style="@style/PropertyEdit"
+            android:layout_height="wrap_content"
+            bind:text="${exposureTime}" />
+
+        <TextView
+            style="@style/Unit"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/milliseconds_abbreviation" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/post_exposure_time_title" />
+
+        <EditText
+            style="@style/PropertyEdit"
+            android:layout_height="wrap_content"
+            bind:text="${postExposureTime}" />
+
+        <TextView
+            style="@style/Unit"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/milliseconds_abbreviation" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/focus_time_title" />
+
+        <EditText
+            style="@style/PropertyEdit"
+            android:layout_height="wrap_content"
+            bind:text="${focusTime}" />
+
+        <TextView
+            style="@style/Unit"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/milliseconds_abbreviation" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="Focal length" />
+
+        <EditText
+            style="@style/PropertyEdit"
+            android:layout_height="wrap_content"
+            bind:text="${focalLength}" />
+
+        <TextView
+            style="@style/Unit"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/millimeter_abbreviation" />
+
+
+    </GridLayout>
+</FrameLayout>

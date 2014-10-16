@@ -1,0 +1,78 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://robobinding.org/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff2c3339"
+    tools:ignore="MissingPrefix"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/steps_per_unit_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${stepsPerUnit}" />
+        <TextView
+            style="@style/Unit"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/millimeter_abbreviation" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/speed_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${speed}" />
+        <TextView
+            style="@style/Unit"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/mm_per_sec_abbreviation" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/ramp_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${ramp}" />
+        <TextView
+            style="@style/Unit"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/milliseconds_abbreviation" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/post_motor_time_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${postTime}" />
+        <TextView
+            style="@style/Unit"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/milliseconds_abbreviation" />
+    </GridLayout>
+
+</FrameLayout>

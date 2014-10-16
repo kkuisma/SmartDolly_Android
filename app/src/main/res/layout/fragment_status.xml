@@ -1,0 +1,135 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://robobinding.org/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MissingPrefix"
+    android:background="#ff2c3339">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:text="@string/run_time_title"
+                style="@style/StatusTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:text="@string/total_time_title"
+                style="@style/StatusTitle" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:text="{elapsedTime}"
+                style="@style/StatusValue"
+                android:layout_gravity="fill" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:00:00"
+                style="@style/StatusValueSmall" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shots_taken_title"
+                style="@style/StatusTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_shots_title"
+                style="@style/StatusTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:text="{shotsTaken}"
+                style="@style/StatusValue" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:text="{totalShots}"
+                style="@style/StatusValueSmall" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_position_title"
+                style="@style/StatusTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/end_position_title"
+                style="@style/StatusTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:text="{currentPosition}"
+                style="@style/StatusValue" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:text="{maxDistance}"
+                style="@style/StatusValueSmall" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/battery_title"
+                style="@style/StatusTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low battery limit:"
+                style="@style/StatusTitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:text="{batVoltage}"
+                style="@style/StatusValue" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_battery_limit_text"
+                style="@style/StatusValueSmall" />
+
+            <CheckBox
+                android:id="@+id/checkBoxLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_gravity="left|top"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="@string/home_limit_text"
+                bind:checked="{limit1}"
+                android:textColor="@android:color/background_light"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/checkBoxRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_gravity="right|top"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:text="@string/end_limit_text"
+                bind:checked="{limit2}"
+                android:textColor="@android:color/background_light" />
+
+    </GridLayout>
+
+</FrameLayout>

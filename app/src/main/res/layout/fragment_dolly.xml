@@ -1,0 +1,110 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://robobinding.org/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff2c3339"
+    tools:context=".MainActivity"
+    tools:ignore="MissingPrefix">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/interval_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${interval}" />
+        <Switch
+            android:id="@+id/interval_lock_switch"
+            android:textOff="@string/locked_text"
+            android:textOn="@string/unlocked_text"
+            style="@style/LockButton" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/total_time_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${totalTime}" />
+        <Switch
+            android:id="@+id/total_time_lock_switch"
+            android:textOff="@string/locked_text"
+            android:textOn="@string/unlocked_text"
+            style="@style/LockButton" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/total_shots_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${totalShots}" />
+        <Switch
+            android:id="@+id/total_shots_lock_switch"
+            android:textOff="@string/locked_text"
+            android:textOn="@string/unlocked_text"
+            style="@style/LockButton" />
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/max_length_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${maxDistance}" />
+        <Button
+            android:id="@+id/max_distance_lock_switch"
+            android:text="@string/measure_text"
+            style="@style/LockButton"
+            android:layout_gravity="center|fill_horizontal"
+            bind:onClick="measure"/>
+
+        <TextView
+            style="@style/StatusTitle"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:text="@string/step_size_title" />
+        <EditText
+            android:layout_height="wrap_content"
+            style="@style/PropertyEdit"
+            bind:text="${motionPerCycle}" />
+        <Switch
+            android:id="@+id/motion_per_cycle_lock_switch"
+            android:textOff="@string/locked_text"
+            android:textOn="@string/unlocked_text"
+            style="@style/LockButton" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_text"
+            android:padding="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center|fill_horizontal"
+            bind:onClick="start" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="30dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center|fill_horizontal"
+            android:text="@string/go_home_text"
+            bind:onClick="goHome" />
+    </GridLayout>
+</FrameLayout>
